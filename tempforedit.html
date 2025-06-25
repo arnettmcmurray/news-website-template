@@ -1,193 +1,89 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://i.fbcd.co/products/resized/resized-750-500/2102-m30-i030-n015-p-c40-1789659392-news-mainpreview-e990357334397ec9be3cf1eb0c4decd90c89245ecc15ee69383d78a6c641593d.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #222;
-    line-height: 1.6;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      "header header header header"
-      "news   news   news   aside"
-      "cat1   cat2   cat3   aside"
-      "footer footer footer footer";
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .site-header {
-    grid-area: header;
-    background: #ffffffcc;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .logo a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #222;
-  }
-  
-  .search-bar input {
-    padding: 6px 10px;
-    font-size: 1rem;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-  }
-  
-  .nav-links a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-  }
-  .nav-links a:hover {
-    color: #0077cc;
-  }
-  
-  .news-grid {
-    grid-area: news;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .news-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-  }
-  
-  .news-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .news-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .news-card .meta {
-    font-size: 0.9em;
-    color: #666;
-  }
-  
-  .sidebar {
-    grid-area: aside;
-    background: #ffffffcc;
-    padding: 20px;
-    border-left: 1px solid #ccc;
-  }
-  .sidebar h2 {
-    margin-bottom: 10px;
-  }
-  .sidebar ul {
-    list-style: none;
-  }
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  .sidebar a {
-    text-decoration: none;
-    color: #0077cc;
-  }
-  
-  .categories {
-    display: grid;
-    grid-area: cat1 / cat1 / cat3 / aside;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .category {
-    background: #ffffffcc;
-    padding: 15px;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  .category img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .site-footer {
-    grid-area: footer;
-    background: #222;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-  }
-  .footer-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  .footer-columns div {
-    flex: 1 1 30%;
-    margin: 10px;
-  }
-  .footer-columns h4 {
-    margin-bottom: 10px;
-  }
-  .footer-columns a {
-    color: #ddd;
-    text-decoration: none;
-  }
-  .footer-columns a:hover {
-    text-decoration: underline;
-  }
-  p.copyright {
-    font-size: 0.85rem;
-    color: #aaa;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .grid-container {
-      grid-template-areas:
-        "header"
-        "news"
-        "aside"
-        "cat1"
-        "cat2"
-        "cat3"
-        "footer";
-      grid-template-columns: 1fr;
-    }
-    .news-grid, .categories {
-      grid-template-columns: 1fr;
-    }
-    .footer-columns {
-      flex-direction: column;
-      text-align: left;
-    }
-  }
-  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VYLNT News</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="site-header">
+        <div class="header-container">
+          <div class="logo">
+            <a href="#">VYLNT:NEWS</a>
+          </div>
+          <nav class="nav-links">
+            <a href="#">Top Stories</a>
+            <a href="#">Sports</a>
+            <a href="#">Culture</a>
+            <a href="#">Tech</a>
+          </nav>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+          </div>
+        </div>
+      </header>
+
+      <section class="news-grid">
+        <div class="news-card">
+          <img src="https://placekitten.com/400/200" alt="News Image" />
+          <h3>Sample Headline</h3>
+          <p class="meta">By Author | June 24, 2025</p>
+          <p>Short excerpt of the article goes here...</p>
+        </div>
+        <div class="news-card">
+          <img src="https://placekitten.com/401/200" alt="News Image" />
+          <h3>Another Headline</h3>
+          <p class="meta">By Author | June 24, 2025</p>
+          <p>Short excerpt of the article goes here...</p>
+        </div>
+        <div class="news-card">
+          <img src="https://placekitten.com/402/200" alt="News Image" />
+          <h3>Breaking Story</h3>
+          <p class="meta">By Author | June 24, 2025</p>
+          <p>Short excerpt of the article goes here...</p>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <h2>Trending Now</h2>
+        <ul>
+          <li><a href="#">AI Replaces Anchors in Japan</a></li>
+          <li><a href="#">Elections Heat Up in Swing States</a></li>
+          <li><a href="#">NASA Discovers New Exoplanet</a></li>
+          <li><a href="#">Chicago Weather Turns Tropical</a></li>
+          <li><a href="#">Markets Rally After Fed Decision</a></li>
+        </ul>
+        <div class="newsletter-signup">
+          <h3>Join Our Newsletter</h3>
+          <input type="email" placeholder="Your email" />
+          <button>Sign Up</button>
+        </div>
+      </aside>
+
+      <section class="categories">
+        <div class="category">Category 1</div>
+        <div class="category">Category 2</div>
+        <div class="category">Category 3</div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-columns">
+          <div>
+            <h4>About</h4>
+            <p>Independent news since 2025.</p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <p>email@vylntnews.com</p>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <p>&copy; 2025 VYLNT:NEWS</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
